@@ -1,7 +1,7 @@
 %define app_id io.github.SokolovValy.MobileAuth
 
 Name: mobile-auth
-Version: 0.1.1
+Version: 0.2
 Release: alt1
 
 Summary: Alt Mobile domain input tool
@@ -49,7 +49,7 @@ cp -r mobileauth \
 %_bindir/%name
 %_datadir/metainfo/%app_id.metainfo.xml
 %_alterator_datadir/backends/system/authentication_mobile.backend
-%_datadir/polkit-1/actions/ru.basealt.alterator.authentication_mobile1.policy
+%_datadir/polkit-1/actions/org.altlinux.alterator.authentication_mobile1.policy
 %_desktopdir/%app_id.desktop
 %_iconsdir/hicolor/*/apps/*.svg
 %_datadir/locale/*/LC_MESSAGES/%name.mo
@@ -58,6 +58,11 @@ cp -r mobileauth \
 
 
 %changelog
+* Tue Feb 04 2025 Valentin Sokolov <sova@altlinux.org> 0.2-alt1
+- Renamed interface and .policy file names (ru.basealt -> org.altlinux)
+- Renamed authentication metod (In_domain -> Join)
+- Changed .backend file format (ini -> toml)
+
 * Wed Sep 04 2024 Valentin Sokolov <sova@altlinux.org> 0.1.1-alt1
 - Added desktop icon
 
